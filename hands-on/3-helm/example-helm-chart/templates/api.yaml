@@ -19,7 +19,7 @@ spec:
         - name: REDIS_HOST
           value: redis-svc
         - name: REDIS_PORT
-          value: "{{ Values.redis.port}}"
+          value: "6379"
         ports:
         - containerPort: 5000
       imagePullSecrets:
@@ -33,6 +33,6 @@ spec:
   selector:
     app: python
   ports:
-  - port: {{ Values.api.port }} 
+  - port: 5000
     targetPort: 5000
   type: ClusterIP
