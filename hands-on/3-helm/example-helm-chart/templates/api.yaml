@@ -22,7 +22,7 @@ spec:
           value: "6379"
         ports:
         - containerPort: 5000
-      imagePullSecret:
+      imagePullSecrets:
       - name: qq87-server
 ---
 apiVersion: v1
