@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: python
-        image: registry.srcmesh.dev/workshop/qq87:0.0.0.1
+        image: registry.srcmesh.dev/workshop/qq87:0.0.1
         env:
         - name: REDIS_HOST
           value: redis-svc
