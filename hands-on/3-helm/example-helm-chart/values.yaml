@@ -1,2 +1,12 @@
 nginx:
   image: nginx:latest
+  port: 80
+redis:
+  image: redis:latest
+  port: 6379
+api:
+  image: registry.srcmesh.dev/workshop/qq87:0.0.1
+  port: 5000
+image:
+  pullSecret:
+    name: qq87-server

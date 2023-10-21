@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
       - name: redis
-        image: redis:latest
+        image: {{ .Values.redis.image }}
         ports:
         - containerPort: 6379
 ---
@@ -26,6 +26,6 @@ spec:
   selector:
     app: redis
   ports:
-  - port: 6379
+  - port: {{ .Values.redis.port }} 
     targetPort: 6379
   type: ClusterIP

@@ -36,7 +36,7 @@ spec:
   selector:
     app: nginx
   ports:
-  - port: 80
+  - port: {{Values.nginx.port }} 
     targetPort: 80
 
 ---

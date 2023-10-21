@@ -14,16 +14,16 @@ spec:
     spec:
       containers:
       - name: python
-        image: registry.srcmesh.dev/workshop/qq87:0.0.1
+        image: {{ .Values.api.image }}
         env:
         - name: REDIS_HOST
           value: redis-svc
         - name: REDIS_PORT
-          value: "6379"
+          value: {{ Values.redis.port | qoute }} 
         ports:
         - containerPort: 5000
       imagePullSecrets:
-      - name: qq87-server
+      - name: {{ .Values.image.pullSecret }}
 ---
 apiVersion: v1
 kind: Service
@@ -33,6 +33,6 @@ spec:
   selector:
     app: python
   ports:
-  - port: 5000
+  - port: {{ Values.api.port }} 
     targetPort: 5000
   type: ClusterIP
